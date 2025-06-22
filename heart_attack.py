@@ -19,7 +19,6 @@ def get_input():
     return user_input
 
 
-
 # Function to predict from input
 def predict_heartattack(model, user_input):
     
@@ -33,7 +32,6 @@ def predict_heartattack(model, user_input):
 def convert_to_category(prediction):
     label_mapping = {0: "low chance", 1: "HIGH CHANCE"}
     return label_mapping[prediction[0]]
-
 
 def main():
     
