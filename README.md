@@ -23,13 +23,37 @@ This repository implements machine learning techniques to train a classification
 git clone https://github.com/BaKhoi/heart-attack-prediction.git
 
 cd heart-attack-prediction
-
 ```
 
 2. Install required packages
 ```
 pip install -r requirements.txt
+```
+## With Docker
+1. Install Docker 
+```
+curl https://get.docker.com | sh && sudo systemctl --now enable docker
+```
+2. Clone the repository
+```
+git clone https://github.com/BaKhoi/heart-attack-prediction.git
 
+cd heart-attack-prediction
+```
+
+3. Build Docker Image
+```
+docker build -t ha_ml
+```
+
+4. Run with scripts
+```
+docker run --rm -it ha_ml python heart_attack.py --amp
+```
+
+5. Run with web interface (FastAPI mode)
+```
+docker run --rm -it -p 8888:8888 ha_ml uvicorn server:app --host 0.0.0.0 --port 8888
 ```
 
 ## Model Performance
